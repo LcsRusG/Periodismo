@@ -1,0 +1,225 @@
+/* --- RESET --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fff;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+/* --- 1. CABECERA CLÁSICA --- */
+.classic-header {
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 40px;
+}
+
+.main-brand {
+    font-family: 'Georgia', serif;
+    font-size: 4rem; /* Título grande */
+    font-weight: 900;
+    color: #d10000; /* Rojo Fuerte */
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    line-height: 1;
+    margin-bottom: 15px; /* Un poco más de aire antes del subtítulo */
+}
+
+.brand-subtitle {
+    font-family: Arial, sans-serif;
+    /* CAMBIO 1: Texto más grande y expandido */
+    font-size: 1.1rem; 
+    letter-spacing: 4px; /* Separa las letras para ocupar más ancho */
+    text-transform: uppercase;
+    color: #1a1a1a;
+    font-weight: bold;
+    margin-bottom: 30px;
+    display: inline-block; /* Asegura que el espaciado funcione bien */
+    width: 100%; /* Intenta ocupar el ancho disponible */
+}
+
+/* Navegación Full Width con bordes */
+.nav-container-full {
+    width: 100%;
+    /* CAMBIO 2: Ambas líneas iguales (2px) */
+    border-top: 2px solid #000;    
+    border-bottom: 2px solid #000; 
+    padding: 15px 0;
+}
+
+.main-nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #000;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.main-nav a:hover {
+    color: #d10000;
+}
+
+/* --- 2. CONTENEDOR GLOBAL --- */
+.global-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: block; 
+    margin-bottom: 80px;
+}
+
+/* --- 3. HERO (NOTICIA PRINCIPAL) --- */
+.hero-section {
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.main-story figure {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.main-story img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.main-story figcaption {
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    color: #777;
+    margin-top: 5px;
+}
+
+.main-story h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 1.1;
+    margin: 20px 0;
+    color: #1a1a1a;
+}
+
+.main-story .summary {
+    font-size: 1.3rem;
+    color: #444;
+    line-height: 1.5;
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+}
+
+.meta .author {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    color: #d10000;
+}
+
+/* --- LÍNEA DIVISORIA --- */
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 40px 0;
+}
+
+/* --- 4. ÚLTIMAS NOTICIAS (GRID 3 COLUMNAS) --- */
+.section-label {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+.news-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.grid-story {
+    display: flex;
+    flex-direction: column;
+}
+
+/* CAMBIO 3: Solución para imágenes cortadas */
+.grid-story .img-wrapper {
+    margin-bottom: 15px;
+    width: 100%;
+    /* Eliminamos height: 200px fijo */
+    /* Usamos ratio 3:2 (clásico de fotografía) para que respire más */
+    aspect-ratio: 3 / 2; 
+    overflow: hidden;
+}
+
+.grid-story img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Mantiene el relleno sin deformar */
+    transition: transform 0.3s;
+}
+
+.grid-story:hover img {
+    transform: scale(1.05);
+}
+
+.grid-story h4 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.grid-story .author {
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #666;
+    font-weight: bold;
+}
+
+/* --- 5. FOOTER --- */
+.full-width-footer {
+    width: 100%;
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 50px 0;
+    margin-top: 50px;
+}
+
+.footer-inner-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.social-links { margin-bottom: 20px; }
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+}
+.full-width-footer p { font-size: 0.8rem; color: #888; }
