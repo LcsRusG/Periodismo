@@ -67,6 +67,14 @@ body {
     color: #d10000;
 }
 
+/* --- AJUSTE DE ENLACES EN CABECERA --- */
+/* Esto hace que el texto "FUENLANEWS" sea clicable pero mantenga su color y estilo */
+.header-inner a {
+    text-decoration: none;
+    color: inherit; /* Hereda el color (rojo o negro según corresponda) */
+    cursor: pointer;
+}
+
 /* --- 2. CONTENEDOR GLOBAL --- */
 .global-container {
     max-width: 1100px;
