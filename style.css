@@ -17,32 +17,30 @@ body {
 
 .main-brand {
     font-family: 'Georgia', serif;
-    font-size: 4rem; /* Título grande */
+    font-size: 4rem; 
     font-weight: 900;
-    color: #d10000; /* Rojo Fuerte */
+    color: #d10000; 
     text-transform: uppercase;
     letter-spacing: -1px;
     line-height: 1;
-    margin-bottom: 15px; /* Un poco más de aire antes del subtítulo */
+    margin-bottom: 15px; 
 }
 
 .brand-subtitle {
     font-family: Arial, sans-serif;
-    /* CAMBIO 1: Texto más grande y expandido */
     font-size: 1.1rem; 
-    letter-spacing: 4px; /* Separa las letras para ocupar más ancho */
+    letter-spacing: 4px; 
     text-transform: uppercase;
     color: #1a1a1a;
     font-weight: bold;
     margin-bottom: 30px;
-    display: inline-block; /* Asegura que el espaciado funcione bien */
-    width: 100%; /* Intenta ocupar el ancho disponible */
+    display: inline-block; 
+    width: 100%; 
 }
 
 /* Navegación Full Width con bordes */
 .nav-container-full {
     width: 100%;
-    /* CAMBIO 2: Ambas líneas iguales (2px) */
     border-top: 2px solid #000;    
     border-bottom: 2px solid #000; 
     padding: 15px 0;
@@ -79,10 +77,10 @@ body {
 }
 
 /* --- 3. HERO (NOTICIA PRINCIPAL) --- */
-.hero-section {
+.hero-section, .opinion-hero {
     width: 100%;
     margin-bottom: 40px;
-    text-align: center;
+    text-align: left; 
 }
 
 .main-story figure {
@@ -106,20 +104,29 @@ body {
     margin-top: 5px;
 }
 
+/* CAMBIO: Título Principal alineado a la izquierda */
 .main-story h2 {
     font-size: 3rem;
     font-weight: bold;
     line-height: 1.1;
-    margin: 20px 0;
     color: #1a1a1a;
+    
+    text-align: left; /* <-- CAMBIO AQUÍ */
+    
+    max-width: 100%; 
+    margin: 20px 0; 
 }
 
+/* CAMBIO: Descripción Principal alineada a la izquierda */
 .main-story .summary {
     font-size: 1.3rem;
     color: #444;
     line-height: 1.5;
-    max-width: 900px;
-    margin: 0 auto 20px auto;
+    
+    text-align: left; /* <-- CAMBIO AQUÍ */
+    
+    max-width: 100%;
+    margin: 0 0 20px 0;
 }
 
 .meta .author {
@@ -128,13 +135,15 @@ body {
     text-transform: uppercase;
     font-size: 0.8rem;
     color: #d10000;
+    display: block;      
+    text-align: left;    
 }
 
 /* --- LÍNEA DIVISORIA --- */
 .section-divider {
     border: 0;
-    height: 1px;
-    background: #ccc;
+    height: 1.2px;
+    background: #000;
     margin: 40px 0;
 }
 
@@ -160,12 +169,9 @@ body {
     flex-direction: column;
 }
 
-/* CAMBIO 3: Solución para imágenes cortadas */
 .grid-story .img-wrapper {
     margin-bottom: 15px;
     width: 100%;
-    /* Eliminamos height: 200px fijo */
-    /* Usamos ratio 3:2 (clásico de fotografía) para que respire más */
     aspect-ratio: 3 / 2; 
     overflow: hidden;
 }
@@ -173,7 +179,7 @@ body {
 .grid-story img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Mantiene el relleno sin deformar */
+    object-fit: cover;
     transition: transform 0.3s;
 }
 
@@ -186,6 +192,7 @@ body {
     line-height: 1.3;
     margin-bottom: 10px;
     font-weight: bold;
+    text-align: left; /* Aseguramos izquierda por si acaso */
 }
 
 .grid-story .author {
@@ -223,3 +230,234 @@ body {
     border-bottom: 1px solid transparent;
 }
 .full-width-footer p { font-size: 0.8rem; color: #888; }
+
+/* =========================================
+   ESTILOS ESPECÍFICOS DE OPINIÓN
+   ========================================= */
+
+.page-title-container {
+    text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #000; 
+    padding-bottom: 10px;
+}
+
+.section-big-title {
+    font-family: 'Georgia', serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #d10000; 
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* Grid de 2 Columnas (para Opinión) */
+.news-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 40px; 
+}
+
+/* Estilos extra para las tarjetas de opinión */
+.author-label {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* CAMBIO: Texto a la izquierda en descripciones de opinión */
+.summary-small {
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.4;
+    margin-top: 5px;
+    text-align: left; /* <-- CAMBIO AQUÍ */
+}
+
+/* CAMBIO: Texto a la izquierda en títulos de opinión */
+.opinion-card h4 {
+    text-align: left; /* <-- CAMBIO AQUÍ */
+}
+
+/* Espaciador utilitario */
+.spacer-40 {
+    height: 40px;
+    width: 100%;
+}
+
+/* Estado activo del menú */
+.main-nav a.active {
+    color: #d10000;
+    border-bottom: 2px solid #d10000;
+}
+
+/* Ajustes cabecera opinión (Invertida) */
+.brand-subtitle.label-top {
+    margin-bottom: 5px; 
+    font-size: 1.1rem;    
+}
+
+.main-brand.title-bottom {
+    margin-bottom: 30px; 
+    margin-top: 0;
+}
+
+
+/* =========================================
+   ESTILOS PÁGINA NOTICIAS
+   ========================================= */
+
+/* --- ETIQUETA DE SECCIÓN (Ej: POLÍTICA) --- */
+.section-tag {
+    font-family: Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 900; /* Muy negrita */
+    text-transform: uppercase;
+    color: #1a1a1a;
+    display: block;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+/* --- GRID SUPERIOR (3 Breves izq | 1 Grande der) --- */
+.news-top-grid {
+    display: grid;
+    /* Columna izq (40%) y Columna der (60%) aprox */
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 40px;
+    align-items: start;
+}
+
+/* Columna Izquierda (con línea vertical a la derecha) */
+.news-sidebar-left {
+    border-right: 2px solid #000; 
+    padding-right: 40px; 
+    
+    /* --- CAMBIOS MÁGICOS --- */
+    display: flex;              /* Activamos Flexbox */
+    flex-direction: column;     /* Los elementos van uno debajo de otro */
+    justify-content: space-between; /* Distribuye el espacio sobrante ENTRE las noticias */
+    height: 100%;               /* Fuerza a ocupar toda la altura que le da el Grid padre */
+}
+
+/* Tarjetas de texto de la izquierda (Líneas horizontales pequeñas) */
+.text-card {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    /* CAMBIO: Grosor 2px y color negro puro #000 */
+    border-bottom: 2px solid #000; 
+}
+
+/* IMPORTANTE: Aseguramos que la última no tenga borde */
+.text-card.no-border {
+    border-bottom: none; 
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.text-card h4 {
+    font-size: 1.3rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.featured-card .img-wrapper-large {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.featured-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.featured-card h2 {
+    font-size: 2.2rem; /* Un poco más pequeño que la portada, pero grande */
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Estilo general para los resúmenes de noticias */
+.summary-text {
+    font-family: 'Georgia', serif;
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.5;
+    text-align: left;
+}
+
+/* --- LISTADO INFERIOR (Horizontal: Imagen Izq - Texto Der) --- */
+.news-feed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Espacio entre noticias */
+}
+
+.horizontal-card {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Imagen de la tarjeta horizontal */
+.horizontal-card .card-image {
+    width: 35%; /* Ocupa el 35% del ancho */
+    flex-shrink: 0; /* Evita que se aplaste */
+}
+
+.horizontal-card .card-image img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 3 / 2; /* Formato rectangular estándar */
+    object-fit: cover;
+    display: block;
+}
+
+/* Contenido de texto */
+.horizontal-card .card-content {
+    width: 65%;
+}
+
+.horizontal-card h3 {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* =========================================
+   ESTILOS PÁGINA REPORTAJES
+   ========================================= */
+
+/* Ajuste del Hero para Reportajes */
+.report-hero .main-story h2 {
+    margin-top: 15px; /* Un poco de aire tras la etiqueta de sección */
+    text-align: left; /* Título a la izquierda (como pediste) */
+}
+
+/* Resumen Extenso y Justificado (Específico de esta página) */
+.extended-text {
+    text-align: justify !important; /* Forzamos la justificación */
+    hyphens: auto;          /* Evitamos ríos blancos rompiendo palabras */
+    -webkit-hyphens: auto;
+    
+    font-size: 1.1rem;      /* Un pelín más pequeño que la portada para textos largos */
+    line-height: 1.6;       /* Más altura de línea para facilitar lectura */
+    color: #333;
+    margin-top: 15px;
+}
+
+/* Nota: Reutilizamos .horizontal-card y .news-feed-list de la página de Noticias,
+   así que no hace falta escribir más CSS para la lista de abajo. */
