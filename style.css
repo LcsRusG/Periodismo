@@ -455,7 +455,6 @@ body {
     text-align: left; /* Título a la izquierda (como pediste) */
 }
 
-/* Resumen Extenso y Justificado (Específico de esta página) */
 .extended-text {
     text-align: justify !important; /* Forzamos la justificación */
     hyphens: auto;          /* Evitamos ríos blancos rompiendo palabras */
@@ -467,5 +466,75 @@ body {
     margin-top: 15px;
 }
 
-/* Nota: Reutilizamos .horizontal-card y .news-feed-list de la página de Noticias,
-   así que no hace falta escribir más CSS para la lista de abajo. */
+/* =========================================
+   ESTILOS PLANTILLA DE ARTÍCULO (Lectura)
+   ========================================= */
+
+/* Contenedor específico para lectura (opcional, por si queremos hacerlo más estrecho en el futuro) */
+.full-article-layout {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+/* Cabecera del artículo (Títulos) */
+.article-header {
+    margin-bottom: 25px;
+}
+
+.article-title {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #1a1a1a;
+    line-height: 1.1;
+    text-align: left; /* Alineado a la izquierda */
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.article-subtitle {
+    font-family: Arial, sans-serif; /* O Georgia, según preferencia */
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: #777; /* Grisáceo */
+    line-height: 1.4;
+    text-align: left; /* Alineado a la izquierda */
+    margin-bottom: 30px;
+}
+
+/* Imagen Principal */
+.article-figure {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.article-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Metadatos (Lucas Rus, Fecha...) */
+.article-meta {
+    font-family: Arial, sans-serif;
+    font-size: 0.85rem;
+    color: #666;
+    margin-top: 10px;
+    text-align: right; /* Alineado a la DERECHA */
+    font-style: italic;
+    border-bottom: 1px solid #eee; /* Opcional: una línea suave separadora */
+    padding-bottom: 20px;
+}
+
+/* Cuerpo del Texto */
+.article-body p {
+    font-family: 'Georgia', serif;
+    font-size: 1.15rem; /* Tamaño cómodo para lectura */
+    line-height: 1.8;   /* Altura de línea amplia para no cansar la vista */
+    color: #1a1a1a;
+    margin-bottom: 25px; /* Espacio entre párrafos */
+    
+    text-align: justify;    /* Texto Justificado */
+    hyphens: auto;          /* Silabeo activado */
+    -webkit-hyphens: auto;
+}
