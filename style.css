@@ -710,5 +710,17 @@ body {
     font-size: 1rem;
     color: #444;
     line-height: 1.6;
-    text-align: left;
+    
+    /* CAMBIOS APLICADOS: */
+    text-align: justify; /* Justifica el texto a ambos lados */
+    margin-bottom: 15px; /* Crea una separación real entre párrafos */
+    
+    /* Mejoramos el justificado permitiendo separar palabras con guiones si es necesario */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+}
+
+/* Truco extra: quitamos el margen al último párrafo para que no deforme la caja por abajo */
+.about-content p:last-child {
+    margin-bottom: 0;
 }
