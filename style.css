@@ -6,6 +6,13 @@ body {
     background-color: #fff;
     color: #1a1a1a;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* Hace que el contenido principal se estire y ocupe el espacio sobrante */
 }
 
 /* --- 1. CABECERA CLÁSICA --- */
@@ -723,4 +730,38 @@ body {
 /* Truco extra: quitamos el margen al último párrafo para que no deforme la caja por abajo */
 .about-content p:last-child {
     margin-bottom: 0;
+}
+
+/* --- REDES SOCIALES EN EL ENCABEZADO --- */
+.header-inner {
+    position: relative;
+    /* Aseguramos que el encabezado comparta el mismo ancho máximo que el resto de tu web */
+    max-width: 1200px; /* Si tu global-container tiene otro ancho, ponlo aquí */
+    margin: 0 auto; 
+    padding: 0 20px; /* Margen lateral idéntico al del texto de las noticias */
+}
+
+.social-top-right {
+    position: absolute;
+    top: 0px;
+    right: 70px; /* Ahora respeta el borde del contenedor de lectura, no el de la pantalla */
+    
+    display: flex;
+    flex-direction: column;
+    /* CAMBIO CLAVE: Alineamos a la izquierda para que las arrobas (@) queden en columna perfecta */
+    align-items: flex-start; 
+    gap: 5px;
+}
+
+.social-top-right a {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem; /* Un pelín más grande para que la @ se lea bien */
+    color: #666;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.social-top-right a:hover {
+    color: #1e408b;
 }
